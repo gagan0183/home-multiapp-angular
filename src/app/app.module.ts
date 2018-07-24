@@ -8,6 +8,9 @@ import { CourseComponent } from './course/course.component';
 import { HttpModule } from '@angular/http';
 import { CourseService } from './services/course.service';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { CourseService } from './services/course.service';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule,
+    MatExpansionModule
   ],
   providers: [CourseService],
   bootstrap: [AppComponent]

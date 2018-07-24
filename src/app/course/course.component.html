@@ -1,1 +1,14 @@
-{{ course.title }}
+<mat-expansion-panel class="marginSetBottom">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ course.title }}
+      </mat-panel-title>
+      <mat-panel-description>
+        <span>{{ course.category }}</span>
+        <span class="alignRight">{{ course.status }}</span>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <span>{{ course.description }}</span>
+    <span class="alignStartdate">Start - {{ course.startDate | date }}</span>
+    <span class="alignCompletedate">Complete - {{ course.completeDate | date}}</span>
+  </mat-expansion-panel>

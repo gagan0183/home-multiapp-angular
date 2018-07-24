@@ -1,0 +1,18 @@
+.marginSetBottom {
+    margin-bottom: 9px;
+}
+
+.alignRight {
+    position: relative;
+    left: 75%;
+}
+
+.alignStartdate {
+    position: relative;
+    left: 29%;
+}
+
+.alignCompletedate {
+    position: relative;
+    left: 65%;
+}
