@@ -8,6 +8,8 @@ import { CourseComponent } from './course/course.component';
 import { HttpModule } from '@angular/http';
 import { CourseService } from './services/course.service';
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 
@@ -22,6 +24,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     BrowserModule,
     HttpModule,
     BrowserAnimationsModule,
+    AngularFontAwesomeModule,
     MatExpansionModule
   ],
   providers: [CourseService],
