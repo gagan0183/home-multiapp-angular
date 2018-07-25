@@ -12,13 +12,15 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseListComponent,
-    CourseComponent
+    CourseComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
