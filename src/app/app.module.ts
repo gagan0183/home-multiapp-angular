@@ -14,6 +14,7 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SearchPipe } from './filter/search.pipe';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppComponent,
     CourseListComponent,
     CourseComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
