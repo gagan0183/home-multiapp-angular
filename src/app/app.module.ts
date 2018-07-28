@@ -12,9 +12,11 @@ import { routes } from './app.route';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchPipe } from './filter/search.pipe';
+import { AddcourseComponent } from './addcourse/addcourse.component';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { SearchPipe } from './filter/search.pipe';
     CourseListComponent,
     CourseComponent,
     NavbarComponent,
-    SearchPipe
+    SearchPipe,
+    AddcourseComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { SearchPipe } from './filter/search.pipe';
     BrowserAnimationsModule,
     Angular2FontawesomeModule,
     RouterModule.forRoot(routes, {useHash: true}),
-    MatExpansionModule
+    MatExpansionModule,
+    FormsModule
   ],
   providers: [CourseService],
   bootstrap: [AppComponent]
