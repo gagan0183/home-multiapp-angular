@@ -1,3 +1,48 @@
-<p>
-  addcourse works!
-</p>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out course detail</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Category" formControlName="category" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Description" formControlName="description" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out course date and status</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Start date" formControlName="startDate" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Complete date" formControlName="completeDate" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Status" formControlName="status" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="URL" formControlName="link" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Success</ng-template>
+      Course has been inseted successfully
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

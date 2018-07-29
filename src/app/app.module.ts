@@ -12,12 +12,14 @@ import { routes } from './app.route';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchPipe } from './filter/search.pipe';
 import { AddcourseComponent } from './addcourse/addcourse.component';
-
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -30,12 +32,16 @@ import { AddcourseComponent } from './addcourse/addcourse.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
     BrowserAnimationsModule,
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
     Angular2FontawesomeModule,
     RouterModule.forRoot(routes, {useHash: true}),
     MatExpansionModule,
-    FormsModule
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [CourseService],
   bootstrap: [AppComponent]
