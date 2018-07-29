@@ -5,14 +5,17 @@ import { Observable } from 'rxjs';
 import Course from '../models/course.model';
 import 'rxjs/add/operator/map';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class CourseService {
 
-  apiCourseUrl: string = "http://localhost:3000/api/course";
+  apiCourseUrl: string = environment.url + "/api/course";
 
   constructor(private http: Http) { }
 
   getCourses(): Observable<Course[]> {
+    console.log(this.apiCourseUrl);
     return this.http.get(this.apiCourseUrl)
           .map(res => {
             console.log(res.json().data.docs);
