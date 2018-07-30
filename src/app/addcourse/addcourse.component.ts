@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators, FormArray} from '@angular/forms';
 
 @Component({
   selector: 'addcourse',
@@ -8,23 +8,29 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class AddcourseComponent implements OnInit {
   isLinear = true;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-
+  formGroup: FormGroup;
+  formArray: FormArray;
+  
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      title: ['', Validators.required],
-      category: ['', Validators.required],
-      description: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      startDate: ['', Validators.required],
-      completeDate: ['', Validators.required],
-      status: ['', Validators.required],
-      link: ['', Validators.required]
-    });
+    this.formArray = this._formBuilder.array([this._formBuilder.group({
+        title: ['', Validators.required],
+        category: ['', Validators.required],
+        description: ['', Validators.required]
+      }),
+      this._formBuilder.group({
+        startDate: ['', Validators.required],
+        completeDate: ['', Validators.required],
+        status: ['', Validators.required],
+        link: ['', Validators.required]
+      })
+    ]);
+    this.formGroup = this._formBuilder.group(this.formArray);
+  }
+
+  submit() {
+    console.log(this.formGroup.value);
   }
 }
 
