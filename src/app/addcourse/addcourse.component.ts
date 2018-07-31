@@ -15,18 +15,19 @@ export class AddcourseComponent implements OnInit {
 
   ngOnInit() {
     this.formArray = this._formBuilder.array([this._formBuilder.group({
-        title: ['', Validators.required],
-        category: ['', Validators.required],
-        description: ['', Validators.required]
-      }),
-      this._formBuilder.group({
-        startDate: ['', Validators.required],
-        completeDate: ['', Validators.required],
-        status: ['', Validators.required],
-        link: ['', Validators.required]
-      })
-    ]);
-    this.formGroup = this._formBuilder.group(this.formArray);
+      title: ['', Validators.required],
+      category: ['', Validators.required],
+      description: ['', Validators.required]
+    }),
+    this._formBuilder.group({
+      startDate: ['', Validators.required],
+      completeDate: ['', Validators.required],
+      status: ['', Validators.required],
+      link: ['', Validators.required]
+    })]);
+    this.formGroup = this._formBuilder.group({
+      formArray: this.formArray
+    });
   }
 
   submit() {
