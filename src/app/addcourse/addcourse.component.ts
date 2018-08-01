@@ -20,8 +20,8 @@ export class AddcourseComponent implements OnInit {
       description: ['', Validators.required]
     }),
     this._formBuilder.group({
-      startDate: ['', Validators.required],
-      completeDate: ['', Validators.required],
+      startDate: [new Date(), Validators.required],
+      completeDate: [new Date(), Validators.required],
       status: ['', Validators.required],
       link: ['', Validators.required]
     })]);

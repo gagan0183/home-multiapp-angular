@@ -18,10 +18,14 @@
     <mat-step [stepControl]="formArray.get([1])" formGroupName="1">
       <ng-template matStepLabel>Fill out course date and status</ng-template>
         <mat-form-field>
-          <input matInput placeholder="Start date" formControlName="startDate" required>
+          <input matInput [matDatepicker]="startDate" placeholder="startDate" [formControl]="startDate">
+          <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+          <mat-datepicker #startDate></mat-datepicker>
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Complete date" formControlName="completeDate" required>
+          <input matInput [matDatepicker]="completeDate" placeholder="Complete date" [formControl]="completeDate">
+          <mat-datepicker-toggle matSuffix [for]="completeDate"></mat-datepicker-toggle>
+          <mat-datepicker #completeDate></mat-datepicker>
         </mat-form-field>
         <mat-form-field>
           <input matInput placeholder="Status" formControlName="status" required>

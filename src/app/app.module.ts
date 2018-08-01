@@ -17,9 +17,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchPipe } from './filter/search.pipe';
 import { AddcourseComponent } from './addcourse/addcourse.component';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatNativeDateModule} from '@angular/material';
+import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-field';
+import {MatDatepickerModule } from '@angular/material/datepicker';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import {MatInputModule} from '@angular/material/input';
     MatExpansionModule,
     MatStepperModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [CourseService],
   bootstrap: [AppComponent]
