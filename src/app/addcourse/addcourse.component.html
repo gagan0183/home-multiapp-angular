@@ -2,28 +2,30 @@
   <mat-horizontal-stepper [linear]="isLinear" formArrayName="formArray">
     <mat-step [stepControl]="formArray.get([0])" formGroupName="0">
       <ng-template matStepLabel>Fill out course detail</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Title" formControlName="title" required>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Category" formControlName="category" required>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Description" formControlName="description" required>
-        </mat-form-field>
+        <div class="step1fields">
+          <mat-form-field>
+            <input matInput placeholder="Title" formControlName="title" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Category" formControlName="category" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Description" formControlName="description" required>
+          </mat-form-field>
+        </div>
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext class="btn btn-sm btn-secondary">Next</button>
         </div>
     </mat-step>
     <mat-step [stepControl]="formArray.get([1])" formGroupName="1">
       <ng-template matStepLabel>Fill out course date and status</ng-template>
         <mat-form-field>
-          <input matInput [matDatepicker]="startDate" placeholder="startDate" [formControl]="startDate">
+          <input matInput [matDatepicker]="startDate" placeholder="startDate" formControlName="startDate">
           <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
           <mat-datepicker #startDate></mat-datepicker>
         </mat-form-field>
         <mat-form-field>
-          <input matInput [matDatepicker]="completeDate" placeholder="Complete date" [formControl]="completeDate">
+          <input matInput [matDatepicker]="completeDate" placeholder="Complete date" formControlName="completeDate">
           <mat-datepicker-toggle matSuffix [for]="completeDate"></mat-datepicker-toggle>
           <mat-datepicker #completeDate></mat-datepicker>
         </mat-form-field>
@@ -34,17 +36,17 @@
           <input matInput placeholder="URL" formControlName="link" required>
         </mat-form-field>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperPrevious class="btn btn-sm btn-secondary">Back</button>
+          <button mat-button matStepperNext class="btn btn-sm btn-secondary">Next</button>
         </div>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Success</ng-template>
         Course has been inseted successfully
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-        <button type="submit"></button>
+        <button mat-button matStepperPrevious class="btn btn-sm btn-secondary">Back</button>
+        <button mat-button (click)="stepper.reset()" class="btn btn-sm btn-secondary">Reset</button>
+        <button type="submit" class="btn btn-sm btn-secondary">Submit</button>
       </div>
     </mat-step>
   </mat-horizontal-stepper>

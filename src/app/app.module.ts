@@ -38,7 +38,6 @@ import {MatDatepickerModule } from '@angular/material/datepicker';
     BrowserAnimationsModule,
     HttpModule,
     FormsModule,
-    ReactiveFormsModule,
     Angular2FontawesomeModule,
     RouterModule.forRoot(routes, {useHash: true}),
     MatExpansionModule,
@@ -46,7 +45,8 @@ import {MatDatepickerModule } from '@angular/material/datepicker';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ReactiveFormsModule
   ],
   providers: [CourseService],
   bootstrap: [AppComponent]
