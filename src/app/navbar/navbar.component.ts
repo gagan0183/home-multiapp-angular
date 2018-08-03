@@ -12,7 +12,6 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log("search " + this.search);
   }
 
 }

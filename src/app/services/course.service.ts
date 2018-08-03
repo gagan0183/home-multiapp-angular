@@ -20,9 +20,12 @@ export class CourseService {
           .map(res => {
             console.log(res.json().data.docs);
             return res.json().data.docs.map(item => {
-              return new Course(item.title, item.provider, item.category, item.description, item.startDate, item.completeDate, item.link, item.status, item.print);
+              return new Course(item.title, item.provider, item.category, item.description, item.startDate, item.completeDate, item.link, item.status);
             });
           });
   }
 
+  postCourse(course: Course): Observable<any> {
+    return this.http.post(this.apiCourseUrl, course);
+  }
 }
