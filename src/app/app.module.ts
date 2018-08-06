@@ -7,9 +7,10 @@ import { CourseComponent } from './course/course.component';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { CourseService } from './services/course.service';
+import { LoaderService } from './services/loader.service';
 
 import { routes } from './app.route';
-import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
+import { Angular2FontawesomeModule } from 'angular2-fontawesome';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,8 +21,10 @@ import { AddcourseComponent } from './addcourse/addcourse.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatNativeDateModule} from '@angular/material';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-field';
 import {MatDatepickerModule } from '@angular/material/datepicker';
+import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
 
 
 @NgModule({
@@ -31,7 +34,8 @@ import {MatDatepickerModule } from '@angular/material/datepicker';
     CourseComponent,
     NavbarComponent,
     SearchPipe,
-    AddcourseComponent
+    AddcourseComponent,
+    ProgressSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +50,13 @@ import {MatDatepickerModule } from '@angular/material/datepicker';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatProgressSpinnerModule,
     ReactiveFormsModule
   ],
-  providers: [CourseService],
+  providers: [
+    CourseService,
+    LoaderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

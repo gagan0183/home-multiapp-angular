@@ -15,10 +15,8 @@ export class CourseService {
   constructor(private http: Http) { }
 
   getCourses(): Observable<Course[]> {
-    console.log(this.apiCourseUrl);
     return this.http.get(this.apiCourseUrl)
           .map(res => {
-            console.log(res.json().data.docs);
             return res.json().data.docs.map(item => {
               return new Course(item.title, item.provider, item.category, item.description, item.startDate, item.completeDate, item.link, item.status);
             });
