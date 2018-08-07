@@ -20,12 +20,12 @@ import { SearchPipe } from './filter/search.pipe';
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatStepperModule} from '@angular/material/stepper';
-import {MatNativeDateModule} from '@angular/material';
+import {MatNativeDateModule, MatDialogModule} from '@angular/material';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-field';
 import {MatDatepickerModule } from '@angular/material/datepicker';
 import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
-
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.co
     NavbarComponent,
     SearchPipe,
     AddcourseComponent,
-    ProgressSpinnerComponent
+    ProgressSpinnerComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +50,13 @@ import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.co
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
+    MatDialogModule,
     MatNativeDateModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule
+  ],
+  entryComponents: [
+    DialogComponent
   ],
   providers: [
     CourseService,

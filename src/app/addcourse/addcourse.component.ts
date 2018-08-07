@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormArray} from '@angular/forms';
 import Course from '../models/course.model';
 import { CourseService } from '../services/course.service';
+import { LoaderService } from '../services/loader.service';
+import { MatDialog } from '@angular/material';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'addcourse',
@@ -13,7 +16,7 @@ export class AddcourseComponent implements OnInit {
   formGroup: FormGroup;
   formArray: FormArray;
   
-  constructor(private _formBuilder: FormBuilder, private courseService: CourseService) {}
+  constructor(private _formBuilder: FormBuilder, private courseService: CourseService, private loaderService: LoaderService, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.formArray = this._formBuilder.array([this._formBuilder.group({
@@ -35,6 +38,7 @@ export class AddcourseComponent implements OnInit {
   }
 
   submit() {
+    this.loaderService.display(true);
     console.log("submit ", this.formGroup.value);
     var formgroup1 = this.formGroup.value.formArray[0];
     var formgroup2 = this.formGroup.value.formArray[1];
@@ -46,9 +50,17 @@ export class AddcourseComponent implements OnInit {
                             new Date(), 
                             formgroup2.status, 
                             formgroup2.link);
-    console.log(course);
     this.courseService.postCourse(course).subscribe((res) => {
-      return res.json();
+      this.loaderService.display(false);
+      this.dialog.open(DialogComponent, {
+        data: {
+          title: "Success",
+          message: "Course added successfully"
+        }
+      })
+    },
+    (err) => {
+      console.log(err)
     });
   }
 }
