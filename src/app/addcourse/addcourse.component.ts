@@ -52,30 +52,30 @@ export class AddcourseComponent implements OnInit {
                             formgroup2.link);
     this.courseService.postCourse(course).subscribe((res) => {
       this.loaderService.display(false);
-      const dialogConfig = new MatDialogConfig();
-      dialogConfig.disableClose = true;
-      dialogConfig.width = "360px";
-      dialogConfig.data = { 
-        title: "Success",
-        message: "Course added successfully"
-      };
-      const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
+      const dialogRef = this.dialog.open(DialogComponent, {
+        width: '360px',
+        data: {
+          title: "Success",
+          message: "Course added successfully"
+        }
+      });
       dialogRef.afterClosed().subscribe(result => {
+        dialogRef.close();
         this.router.navigate(['/course-list']);
       })
     },
     (err) => {
       console.log("err", err);
       this.loaderService.display(false);
-      const dialogConfig = new MatDialogConfig();
-      dialogConfig.disableClose = true;
-      dialogConfig.width = "360px";
-      dialogConfig.data = { 
-        title: "Error",
-        message: "Error occurred while connecting to API"
-      };
-      const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
+      const dialogRef = this.dialog.open(DialogComponent, {
+        width: '360px',
+        data: {
+          title: "Error",
+          message: "Error occurred while connecting to API"
+        }
+      });
       dialogRef.afterClosed().subscribe(result => {
+        dialogRef.close();
         this.router.navigate(['/course-add']);
       })
     });
