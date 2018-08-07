@@ -20,7 +20,7 @@ import { SearchPipe } from './filter/search.pipe';
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatStepperModule} from '@angular/material/stepper';
-import {MatNativeDateModule, MatDialogModule} from '@angular/material';
+import {MatNativeDateModule, MatDialogModule, MatButtonModule} from '@angular/material';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-field';
 import {MatDatepickerModule } from '@angular/material/datepicker';
@@ -50,10 +50,10 @@ import { DialogComponent } from './dialog/dialog.component';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatDialogModule,
     MatNativeDateModule,
     MatProgressSpinnerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   entryComponents: [
     DialogComponent
