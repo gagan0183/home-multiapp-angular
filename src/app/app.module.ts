@@ -53,7 +53,8 @@ import { DialogComponent } from './dialog/dialog.component';
     MatNativeDateModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
   ],
   entryComponents: [
     DialogComponent

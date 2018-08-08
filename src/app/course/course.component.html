@@ -8,7 +8,9 @@
         <span class="alignRight">{{ course.status }}</span>
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <span>{{ course.description }}</span>
-    <span class="alignStartdate">Start - {{ course.startDate | date }}</span>
-    <span class="alignCompletedate">Complete - {{ course.completeDate | date}}</span>
+    <div class="content">
+      <div>{{ course.description }}</div>
+      <div class="alignStartdate">Start - {{ course.startDate | date }}</div>
+      <div class="alignCompletedate">Complete - {{ course.completeDate | date}}</div>
+    </div>
   </mat-expansion-panel>

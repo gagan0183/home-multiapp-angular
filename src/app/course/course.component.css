@@ -3,17 +3,15 @@
     background-color: #3A3F44;
 }
 
-.alignRight {
-    position: relative;
-    left: 75%;
+.content {
+    display: flex;
+    flex-direction: row;
 }
 
-.alignStartdate {
-    position: relative;
-    left: 29%;
+.content div {
+    flex-grow: 1
 }
 
-.alignCompletedate {
-    position: relative;
-    left: 65%;
+.content div:last-child {
+    flex-grow: 0;
 }
