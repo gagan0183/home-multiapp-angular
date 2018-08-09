@@ -48,8 +48,8 @@ export class AddcourseComponent implements OnInit {
                             formgroup1.description, 
                             new Date(), 
                             new Date(), 
-                            formgroup2.status, 
-                            formgroup2.link);
+                            formgroup2.link, 
+                            formgroup2.status);
     this.courseService.postCourse(course).subscribe((res) => {
       this.loaderService.display(false);
       const dialogRef = this.dialog.open(DialogComponent, {
