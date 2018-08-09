@@ -20,7 +20,7 @@ export class CourseService {
           .map(res => {
             console.log("in this", res);
             return res.json().data.docs.map(item => {
-              return new Course(item.title, item.provider, item.category, item.description, item.startDate, item.completeDate, item.link, item.status);
+              return new Course(item.title, item.category, item.provider, item.description, item.startDate, item.completeDate, item.link, item.status);
             });
           })
           .catch(
