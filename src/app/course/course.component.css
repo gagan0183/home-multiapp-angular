@@ -8,10 +8,14 @@
     flex-direction: row;
 }
 
-.content div {
+mat-panel-description {
+    text-align: center;
+}
+
+.alignCat {
     flex-grow: 1
 }
 
-.content div:last-child {
+.alignCompletedate {
     flex-grow: 0;
 }
