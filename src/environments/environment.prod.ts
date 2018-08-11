@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: "https://home-multiapp-api.herokuapp.com/"
+  url: "https://home-multiapp-api.herokuapp.com"
 };
