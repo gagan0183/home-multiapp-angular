@@ -9,11 +9,11 @@
 }
 
 mat-panel-description {
-    text-align: center;
+    flex-grow: 0;
 }
 
 .alignCat {
-    flex-grow: 1
+    flex-grow: 1;
 }
 
 .alignCompletedate {
