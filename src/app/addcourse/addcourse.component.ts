@@ -46,8 +46,8 @@ export class AddcourseComponent implements OnInit {
                             formgroup1.category,
                             formgroup1.provider, 
                             formgroup1.description, 
-                            new Date(), 
-                            new Date(), 
+                            new Date(formgroup2.startDate), 
+                            new Date(formgroup2.completeDate), 
                             formgroup2.link, 
                             formgroup2.status);
     this.courseService.postCourse(course).subscribe((res) => {
