@@ -17,7 +17,7 @@ export class AddcourseComponent implements OnInit {
   formGroup: FormGroup;
   formArray: FormArray;
   
-  constructor(private _formBuilder: FormBuilder, private courseService: CourseService, private loaderService: LoaderService, public dialog: MatDialog, private router: Router) {}
+  constructor(private _formBuilder: FormBuilder, private courseService: CourseService, private loaderService: LoaderService, public dialogComponent: MatDialog, private router: Router) {}
 
   ngOnInit() {
     this.formArray = this._formBuilder.array([this._formBuilder.group({
@@ -52,7 +52,7 @@ export class AddcourseComponent implements OnInit {
                             formgroup2.status);
     this.courseService.postCourse(course).subscribe((res) => {
       this.loaderService.display(false);
-      const dialogRef = this.dialog.open(DialogComponent, {
+      const dialogRef = this.dialogComponent.open(DialogComponent, {
         width: '360px',
         data: {
           title: "Success",
@@ -67,7 +67,7 @@ export class AddcourseComponent implements OnInit {
     (err) => {
       console.log("err", err);
       this.loaderService.display(false);
-      const dialogRef = this.dialog.open(DialogComponent, {
+      const dialogRef = this.dialogComponent.open(DialogComponent, {
         width: '360px',
         data: {
           title: "Error",
