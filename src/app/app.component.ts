@@ -8,14 +8,17 @@ import { LoaderService } from './services/loader.service';
 })
 export class AppComponent {
   showLoader: boolean;
+  showSideBar: boolean = false;
 
-  constructor(
-    private loaderService: LoaderService) {
-  }
+  constructor(private loaderService: LoaderService) {}
 
   ngOnInit() {
     this.loaderService.status.subscribe((val: boolean) => {
-        this.showLoader = val;
+      this.showLoader = val;
     });
+  }
+
+  addCourse() {
+    this.showSideBar = true;
   }
 }

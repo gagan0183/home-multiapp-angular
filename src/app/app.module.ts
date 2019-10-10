@@ -12,20 +12,28 @@ import { LoaderService } from './services/loader.service';
 import { routes } from './app.route';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchPipe } from './filter/search.pipe';
-import { AddcourseComponent } from './addcourse/addcourse.component';
-import {MatInputModule} from '@angular/material/input';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatNativeDateModule, MatDialogModule, MatButtonModule} from '@angular/material';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-field';
-import {MatDatepickerModule } from '@angular/material/datepicker';
+import { AddCourseComponent } from './add-course/add-course.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
+import {
+  MatNativeDateModule,
+  MatDialogModule,
+  MatButtonModule
+} from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {
+  MatFormFieldModule,
+  MatFormFieldControl
+} from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { SidebarModule } from 'primeng/sidebar';
 
 @NgModule({
   declarations: [
@@ -34,9 +42,9 @@ import { DialogComponent } from './dialog/dialog.component';
     CourseComponent,
     NavbarComponent,
     SearchPipe,
-    AddcourseComponent,
     ProgressSpinnerComponent,
-    DialogComponent
+    DialogComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,7 @@ import { DialogComponent } from './dialog/dialog.component';
     HttpModule,
     FormsModule,
     Angular2FontawesomeModule,
-    RouterModule.forRoot(routes, {useHash: true}),
+    RouterModule.forRoot(routes, { useHash: true }),
     MatExpansionModule,
     MatStepperModule,
     MatFormFieldModule,
@@ -54,15 +62,11 @@ import { DialogComponent } from './dialog/dialog.component';
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    SidebarModule
   ],
-  entryComponents: [
-    DialogComponent
-  ],
-  providers: [
-    CourseService,
-    LoaderService
-  ],
+  entryComponents: [DialogComponent],
+  providers: [CourseService, LoaderService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

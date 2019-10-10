@@ -1,11 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <navbar></navbar>
 <div class="container">
-    <a [routerLink]="['course-add']"><fa name="plus-circle" class="pluscircle"></fa></a>
-    <router-outlet>
-        <span *ngIf="showLoader">
-            <progress-spinner></progress-spinner>
-        </span>
-    </router-outlet>
+  <a href="#" (click)="addCourse()"
+    ><fa name="plus-circle" class="pluscircle"></fa
+  ></a>
+  <router-outlet>
+    <span *ngIf="showLoader">
+      <progress-spinner></progress-spinner>
+    </span>
+  </router-outlet>
+  <add-course [showSideBar]="showSideBar"></add-course>
 </div>
-
