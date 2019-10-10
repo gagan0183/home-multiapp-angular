@@ -5,6 +5,42 @@
   (onHide)="hide()"
 >
   <h4 class="add-course-label">Add Course</h4>
+  <form [formGroup]="formGroup" (ngSubmit)="submit()">
+    <div class="form-group">
+      <input pInputText placeholder="Title" formControlName="title" required />
+    </div>
+    <div class="form-group">
+      <input
+        pInputText
+        placeholder="Provider"
+        formControlName="Provider"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <p-dropdown
+        [options]="categories"
+        formControlName="Category"
+        placeholder="Select a Category"
+        [showClear]="true"
+        required
+      ></p-dropdown>
+      <input
+        pInputText
+        placeholder="Category"
+        formControlName="Category"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        pInputText
+        placeholder="Description"
+        formControlName="Description"
+        required
+      />
+    </div>
+  </form>
 
   <button pButton type="button" label="Add" class="ui-button-success"></button>
   <button

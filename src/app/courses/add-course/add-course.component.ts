@@ -8,6 +8,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class AddCourseComponent {
   @Input() showSideBar;
   @Output() onHideSidebar = new EventEmitter();
+  categories: String[] = [];
+
+  constructor() {
+    this.categories = ['Technology', 'Java', 'Javascript', 'Python', 'GCP'];
+  }
 
   hide() {
     this.onHideSidebar.emit('hidesidebar');

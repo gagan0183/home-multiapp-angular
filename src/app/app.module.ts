@@ -35,6 +35,8 @@ import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.co
 import { DialogComponent } from './dialog/dialog.component';
 import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { ButtonModule } from 'primeng/button';
     HttpModule,
     FormsModule,
     Angular2FontawesomeModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes, { useHash: true }),
     MatExpansionModule,
     MatStepperModule,
@@ -63,8 +66,9 @@ import { ButtonModule } from 'primeng/button';
     ReactiveFormsModule,
     MatDialogModule,
     ButtonModule,
+    InputTextModule,
+    DropdownModule,
     MatButtonModule,
-    BrowserAnimationsModule,
     SidebarModule
   ],
   entryComponents: [DialogComponent],
