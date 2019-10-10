@@ -1,15 +1,19 @@
 <mat-expansion-panel class="expansionPanel">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        {{ course.title }}
-      </mat-panel-title>
-      <mat-panel-description>
-        <span>{{ course.status }}</span>
-        <span class="editButton" (click)="editCourse(course)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div class="content">
-      <div class="alignCat">{{ course.category }}</div>
-      <div class="alignCompletedate">Complete - {{ course.completeDate | date}}</div>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{ course.title }}
+    </mat-panel-title>
+    <mat-panel-description>
+      <span>{{ course.status }}</span>
+      <span class="editButton" (click)="editCourse(course)"
+        ><i class="fa fa-pencil-square-o" aria-hidden="true"></i
+      ></span>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div class="content">
+    <div class="alignCat">{{ course.category }}</div>
+    <div class="alignCompletedate">
+      End date - {{ course.completeDate | date}}
     </div>
-  </mat-expansion-panel>
+  </div>
+</mat-expansion-panel>
