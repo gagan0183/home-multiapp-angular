@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CourseListComponent } from './course-list/course-list.component';
-import { CourseComponent } from './course/course.component';
+import { CourseListComponent } from './courses/course-list/course-list.component';
+import { CourseComponent } from './courses/course/course.component';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { CourseService } from './services/course.service';
@@ -17,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchPipe } from './filter/search.pipe';
-import { AddCourseComponent } from './add-course/add-course.component';
+import { AddCourseComponent } from './courses/add-course/add-course.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 import {

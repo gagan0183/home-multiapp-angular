@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import Course from '../models/course.model';
+import Course from '../../models/course.model';
 
 @Component({
   selector: 'course',
@@ -10,10 +10,9 @@ import Course from '../models/course.model';
 export class CourseComponent implements OnInit {
   @Input() course: Course;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   editCourse(course: Course) {
     console.log(course);
