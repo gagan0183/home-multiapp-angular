@@ -10,7 +10,6 @@ import { CourseService } from './services/course.service';
 import { LoaderService } from './services/loader.service';
 
 import { routes } from './app.route';
-import { Angular2FontawesomeModule } from 'angular2-fontawesome';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -37,6 +36,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -50,10 +50,10 @@ import { DropdownModule } from 'primeng/dropdown';
     AddCourseComponent
   ],
   imports: [
+    AngularFontAwesomeModule,
     BrowserModule,
     HttpModule,
     FormsModule,
-    Angular2FontawesomeModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, { useHash: true }),
     MatExpansionModule,
