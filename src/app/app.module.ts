@@ -34,6 +34,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ProgressSpinnerComponent } from './progress-spinner/progress-spinner.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { SidebarModule } from 'primeng/sidebar';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,6 @@ import { SidebarModule } from 'primeng/sidebar';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     HttpModule,
     FormsModule,
     Angular2FontawesomeModule,
@@ -62,7 +62,9 @@ import { SidebarModule } from 'primeng/sidebar';
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     MatDialogModule,
+    ButtonModule,
     MatButtonModule,
+    BrowserAnimationsModule,
     SidebarModule
   ],
   entryComponents: [DialogComponent],
