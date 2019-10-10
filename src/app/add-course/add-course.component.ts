@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'add-course',
@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class AddCourseComponent {
   @Input() showSideBar;
+  @Output() onHideSidebar = new EventEmitter();
+
+  hide() {
+    this.onHideSidebar.emit('hidesidebar');
+  }
 }

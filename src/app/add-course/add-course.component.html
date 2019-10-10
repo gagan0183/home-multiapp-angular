@@ -1,3 +1,8 @@
-<p-sidebar [(visible)]="showSideBar" position="right" [baseZIndex]="10000">
-  <h2>Add Course</h2>
+<p-sidebar
+  [(visible)]="showSideBar"
+  position="right"
+  [baseZIndex]="10000"
+  (onHide)="hide()"
+>
+  <h3 class="add-course-label">Add Course</h3>
 </p-sidebar>

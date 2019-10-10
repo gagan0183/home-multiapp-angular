@@ -9,5 +9,8 @@
       <progress-spinner></progress-spinner>
     </span>
   </router-outlet>
-  <add-course [showSideBar]="showSideBar"></add-course>
+  <add-course
+    [showSideBar]="showSideBar"
+    (onHideSidebar)="resetSideBar()"
+  ></add-course>
 </div>

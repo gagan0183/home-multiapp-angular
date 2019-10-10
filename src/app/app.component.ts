@@ -21,4 +21,8 @@ export class AppComponent {
   addCourse() {
     this.showSideBar = true;
   }
+
+  resetSideBar() {
+    this.showSideBar = false;
+  }
 }
