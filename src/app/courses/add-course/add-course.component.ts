@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoaderService } from '../../services/loader.service';
 import { CourseService } from '../../services/course.service';
 import Course from '../../models/course.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'add-course',
@@ -18,6 +19,7 @@ export class AddCourseComponent implements OnInit {
 
   constructor(
     private _formBuilder: FormBuilder,
+    private router: Router,
     private loaderService: LoaderService,
     private courseService: CourseService
   ) {
@@ -68,8 +70,17 @@ export class AddCourseComponent implements OnInit {
       courseData.print
     );
     console.log(course);
-    setTimeout(() => {
-      this.loaderService.display(false);
-    }, 10000);
+    this.courseService.postCourse(course).subscribe(
+      res => {
+        this.loaderService.display(false);
+        console.log(res);
+        this.router.navigate(['/course-list']);
+      },
+      err => {
+        console.log('err', err);
+        this.loaderService.display(false);
+      }
+    );
+    setTimeout(() => {}, 10000);
   }
 }

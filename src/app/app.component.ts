@@ -16,7 +16,6 @@ export class AppComponent {
 
   ngOnInit() {
     this.loaderService.status.subscribe((val: boolean) => {
-      console.log('value', val);
       this.showLoader = val;
     });
   }
