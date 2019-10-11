@@ -20,6 +20,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
+import { ToggleButtonModule } from 'primeng/togglebutton';
 import { CalendarModule } from 'primeng/calendar';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -59,6 +60,7 @@ export class MaterialModule {}
     InputTextModule,
     DropdownModule,
     SidebarModule,
+    ToggleButtonModule,
     CalendarModule
   ]
 })

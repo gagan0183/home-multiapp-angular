@@ -41,8 +41,48 @@
         placeholder="Start date"
         formControlName="startDate"
         [inputStyle]="{'width':'100%'}"
+        [style]="{'width':'100%'}"
         required
       ></p-calendar>
+    </div>
+    <div class="form-group">
+      <p-calendar
+        placeholder="Complete date"
+        formControlName="completeDate"
+        [inputStyle]="{'width':'100%'}"
+        [style]="{'width':'100%'}"
+        required
+      ></p-calendar>
+    </div>
+    <div class="form-group">
+      <p-dropdown
+        [options]="statuses"
+        optionLabel="name"
+        formControlName="status"
+        placeholder="Select a Status"
+        [autoWidth]="false"
+        [style]="{'width':'100%'}"
+        required
+      ></p-dropdown>
+    </div>
+    <div class="form-group">
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon">www</span>
+        <input
+          type="text"
+          pInputText
+          placeholder="Website"
+          formControlName="link"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <p-toggleButton
+        formControlName="print"
+        onLabel="Printed"
+        offLabel="Not Printed"
+        [style]="{'width':'150px'}"
+      ></p-toggleButton>
     </div>
     <button
       pButton

@@ -10,6 +10,7 @@ export class AddCourseComponent implements OnInit {
   @Input() showSideBar;
   @Output() onHideSidebar = new EventEmitter();
   categories = [];
+  statuses = [];
   formGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) {
@@ -20,6 +21,11 @@ export class AddCourseComponent implements OnInit {
       { name: 'Python', code: 'Python' },
       { name: 'Angular', code: 'Angular' }
     ];
+    this.statuses = [
+      { name: 'Complete', code: 'complete' },
+      { name: 'In Progress', code: 'in-progress' },
+      { name: 'Not Started', code: 'not-started' }
+    ];
   }
 
   ngOnInit() {
@@ -28,7 +34,11 @@ export class AddCourseComponent implements OnInit {
       provider: ['', Validators.required],
       category: ['', Validators.required],
       description: ['', Validators.required],
-      startDate: [new Date(), Validators.required]
+      startDate: [new Date(), Validators.required],
+      completeDate: [new Date(), Validators.required],
+      status: ['', Validators.required],
+      link: ['', Validators.required],
+      print: [false, Validators.required]
     });
   }
 
