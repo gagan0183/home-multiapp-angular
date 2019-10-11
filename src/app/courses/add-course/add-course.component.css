@@ -7,10 +7,11 @@
   margin-bottom: 2em;
 }
 
-.ui-inputtext {
+.ui-inputtext,
+.ui-calendar {
   width: 100%;
 }
 
-.ui-dropdown {
-  width: 100%;
+button {
+  margin-right: 5px;
 }

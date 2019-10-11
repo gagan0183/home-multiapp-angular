@@ -9,7 +9,6 @@
     <div class="form-group">
       <input pInputText placeholder="Title" formControlName="title" required />
     </div>
-    {{categories}}
     <div class="form-group">
       <input
         pInputText
@@ -21,8 +20,11 @@
     <div class="form-group">
       <p-dropdown
         [options]="categories"
+        optionLabel="name"
         formControlName="category"
         placeholder="Select a Category"
+        [autoWidth]="false"
+        [style]="{'width':'100%'}"
         required
       ></p-dropdown>
     </div>
@@ -33,6 +35,14 @@
         formControlName="description"
         required
       />
+    </div>
+    <div class="form-group">
+      <p-calendar
+        placeholder="Start date"
+        formControlName="startDate"
+        [inputStyle]="{'width':'100%'}"
+        required
+      ></p-calendar>
     </div>
     <button
       pButton

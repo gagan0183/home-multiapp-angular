@@ -13,7 +13,13 @@ export class AddCourseComponent implements OnInit {
   formGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) {
-    this.categories = ['Technology', 'Java', 'Javascript', 'Python', 'GCP'];
+    this.categories = [
+      { name: 'Technology', code: 'Technology' },
+      { name: 'Java', code: 'Java' },
+      { name: 'Javascript', code: 'Javascript' },
+      { name: 'Python', code: 'Python' },
+      { name: 'Angular', code: 'Angular' }
+    ];
   }
 
   ngOnInit() {
@@ -21,7 +27,8 @@ export class AddCourseComponent implements OnInit {
       title: ['', Validators.required],
       provider: ['', Validators.required],
       category: ['', Validators.required],
-      description: ['', Validators.required]
+      description: ['', Validators.required],
+      startDate: [new Date(), Validators.required]
     });
   }
 
