@@ -16,6 +16,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { CalendarModule } from 'primeng/calendar';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { RouterModule } from '@angular/router';
@@ -50,7 +51,8 @@ export class MaterialModule {}
     DropdownModule,
     SidebarModule,
     ToggleButtonModule,
-    CalendarModule
+    CalendarModule,
+    ProgressSpinnerModule
   ]
 })
 export class PrimeModule {}

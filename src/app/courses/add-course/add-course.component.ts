@@ -1,5 +1,8 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoaderService } from '../../services/loader.service';
+import { CourseService } from '../../services/course.service';
+import Course from '../../models/course.model';
 
 @Component({
   selector: 'add-course',
@@ -13,7 +16,11 @@ export class AddCourseComponent implements OnInit {
   statuses = [];
   formGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) {
+  constructor(
+    private _formBuilder: FormBuilder,
+    private loaderService: LoaderService,
+    private courseService: CourseService
+  ) {
     this.categories = [
       { name: 'Technology', code: 'Technology' },
       { name: 'Java', code: 'Java' },
@@ -44,5 +51,25 @@ export class AddCourseComponent implements OnInit {
 
   hide() {
     this.onHideSidebar.emit('hidesidebar');
+  }
+
+  addCourse() {
+    this.loaderService.display(true);
+    const courseData = this.formGroup.value;
+    const course = new Course(
+      courseData.title,
+      courseData.category,
+      courseData.provider,
+      courseData.description,
+      new Date(courseData.startDate),
+      new Date(courseData.completeDate),
+      courseData.link,
+      courseData.status,
+      courseData.print
+    );
+    console.log(course);
+    setTimeout(() => {
+      this.loaderService.display(false);
+    }, 10000);
   }
 }
