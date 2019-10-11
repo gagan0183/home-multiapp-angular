@@ -4,6 +4,7 @@ import { LoaderService } from '../../services/loader.service';
 import { CourseService } from '../../services/course.service';
 import Course from '../../models/course.model';
 import { Router } from '@angular/router';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'add-course',
@@ -21,7 +22,8 @@ export class AddCourseComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private router: Router,
     private loaderService: LoaderService,
-    private courseService: CourseService
+    private courseService: CourseService,
+    private toastService: ToastService
   ) {
     this.categories = [
       { name: 'Technology', code: 'Technology' },
@@ -74,10 +76,12 @@ export class AddCourseComponent implements OnInit {
       res => {
         this.loaderService.display(false);
         console.log(res);
+        this.toastService.success('Course added successfully');
         this.router.navigate(['/course-list']);
       },
       err => {
         console.log('err', err);
+        this.toastService.error('Error while adding the course');
         this.loaderService.display(false);
       }
     );

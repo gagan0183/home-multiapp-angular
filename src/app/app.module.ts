@@ -16,6 +16,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { CalendarModule } from 'primeng/calendar';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ToastModule } from 'primeng/toast';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { RouterModule } from '@angular/router';
@@ -23,6 +24,7 @@ import { routes } from './app.route';
 
 import { CourseService } from './services/course.service';
 import { LoaderService } from './services/loader.service';
+import { ToastService } from './services/toast.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -45,6 +47,7 @@ export class MaterialModule {}
     DropdownModule,
     SidebarModule,
     ToggleButtonModule,
+    ToastModule,
     CalendarModule,
     ProgressSpinnerModule
   ]
@@ -75,7 +78,7 @@ export class PrimeModule {}
     PrimeModule
   ],
   entryComponents: [DialogComponent],
-  providers: [CourseService, LoaderService],
+  providers: [CourseService, LoaderService, ToastService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
