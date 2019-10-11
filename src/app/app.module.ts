@@ -4,16 +4,10 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-  MatStepperModule,
-  MatInputModule,
   MatExpansionModule,
   MatNativeDateModule,
-  MatFormFieldModule,
-  MatFormFieldControl,
   MatProgressSpinnerModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatButtonModule
+  MatDialogModule
 } from '@angular/material';
 
 import { SidebarModule } from 'primeng/sidebar';
@@ -42,13 +36,8 @@ import { AddCourseComponent } from './courses/add-course/add-course.component';
 @NgModule({
   exports: [
     MatExpansionModule,
-    MatStepperModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatButtonModule,
     MatNativeDateModule
   ]
 })
