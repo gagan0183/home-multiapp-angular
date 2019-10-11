@@ -6,7 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatExpansionModule,
   MatNativeDateModule,
-  MatProgressSpinnerModule,
   MatDialogModule
 } from '@angular/material';
 
@@ -35,12 +34,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { AddCourseComponent } from './courses/add-course/add-course.component';
 
 @NgModule({
-  exports: [
-    MatExpansionModule,
-    MatProgressSpinnerModule,
-    MatDialogModule,
-    MatNativeDateModule
-  ]
+  exports: [MatExpansionModule, MatDialogModule, MatNativeDateModule]
 })
 export class MaterialModule {}
 
