@@ -36,7 +36,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -50,11 +50,11 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AddCourseComponent
   ],
   imports: [
-    AngularFontAwesomeModule,
+    BrowserAnimationsModule,
+    FontAwesomeModule,
     BrowserModule,
     HttpModule,
     FormsModule,
-    BrowserAnimationsModule,
     RouterModule.forRoot(routes, { useHash: true }),
     MatExpansionModule,
     MatStepperModule,

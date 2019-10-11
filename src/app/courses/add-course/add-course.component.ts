@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 export class AddCourseComponent implements OnInit {
   @Input() showSideBar;
   @Output() onHideSidebar = new EventEmitter();
-  categories: String[] = [];
+  categories = [];
   formGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) {

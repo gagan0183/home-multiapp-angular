@@ -1,8 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <navbar></navbar>
 <div class="container">
-  <a href="#" (click)="addCourse()"
-    ><fa name="plus-circle" class="pluscircle"></fa
+  <a href="#" (click)="addCourse()" class="icon-add-course"
+    ><fa-icon
+      [icon]="faPlusCircle"
+      size="lg"
+      [styles]="{'color': 'gray'}"
+    ></fa-icon
   ></a>
   <router-outlet>
     <span *ngIf="showLoader">

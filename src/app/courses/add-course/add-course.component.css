@@ -7,8 +7,10 @@
   margin-bottom: 2em;
 }
 
-.ui-dropdown,
-.ui-multiselect-label-container,
 .ui-inputtext {
+  width: 100%;
+}
+
+.ui-dropdown {
   width: 100%;
 }
