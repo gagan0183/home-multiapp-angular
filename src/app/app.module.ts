@@ -17,6 +17,7 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 import { CalendarModule } from 'primeng/calendar';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { RouterModule } from '@angular/router';
@@ -78,7 +79,7 @@ export class PrimeModule {}
     PrimeModule
   ],
   entryComponents: [DialogComponent],
-  providers: [CourseService, LoaderService, ToastService],
+  providers: [CourseService, LoaderService, MessageService, ToastService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
