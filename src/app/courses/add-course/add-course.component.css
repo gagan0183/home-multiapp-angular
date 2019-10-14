@@ -15,3 +15,11 @@
 button {
   margin-right: 5px;
 }
+
+.ng-valid.ng-dirty {
+  border: solid 2px lightgreen;
+}
+
+.ng-invalid.ng-dirty {
+  border: solid 2px lightcoral;
+}

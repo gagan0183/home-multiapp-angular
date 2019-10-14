@@ -38,6 +38,7 @@ export class AddCourseComponent implements OnInit {
       { name: 'Not Started', code: 'not-started' }
     ];
   }
+  private formSubmitted = false;
 
   ngOnInit() {
     this.formGroup = this._formBuilder.group({
@@ -58,6 +59,7 @@ export class AddCourseComponent implements OnInit {
   }
 
   addCourse() {
+    this.formSubmitted = true;
     this.loaderService.display(true);
     const courseData = this.formGroup.value;
     const course = new Course(
@@ -72,19 +74,23 @@ export class AddCourseComponent implements OnInit {
       courseData.print
     );
     console.log(course);
-    this.courseService.postCourse(course).subscribe(
-      res => {
-        this.loaderService.display(false);
-        console.log(res);
-        this.toastService.success('Course added successfully');
-        this.router.navigate(['/course-list']);
-      },
-      err => {
-        console.log('err', err);
-        this.toastService.error('Error while adding the course');
-        this.loaderService.display(false);
-      }
-    );
-    setTimeout(() => {}, 10000);
+    console.log(this.formGroup.valid);
+    if (this.formGroup.valid) {
+    }
+    this.loaderService.display(false);
+
+    // this.courseService.postCourse(course).subscribe(
+    //   res => {
+    //     this.loaderService.display(false);
+    //     console.log(res);
+    //     this.toastService.success('Course added successfully');
+    //     this.router.navigate(['/course-list']);
+    //   },
+    //   err => {
+    //     console.log('err', err);
+    //     this.toastService.error('Error while adding the course');
+    //     this.loaderService.display(false);
+    //   }
+    // );
   }
 }
