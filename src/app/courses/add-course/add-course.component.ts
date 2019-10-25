@@ -37,7 +37,7 @@ export class AddCourseComponent implements OnInit {
       { name: 'In Progress', code: 'in-progress' },
       { name: 'Not Started', code: 'not-started' }
     ];
-    console.log(this.formGroup);
+    console.log("formGroup", this.formGroup);
   }
   private formSubmitted = false;
 
