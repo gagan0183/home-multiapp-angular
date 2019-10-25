@@ -16,10 +16,10 @@ button {
   margin-right: 5px;
 }
 
-.ng-valid.ng-dirty {
-  border: solid 2px lightgreen;
+.ng-valid.ng-dirty:not(form) {
+  border: solid 2px green;
 }
 
-.ng-invalid.ng-dirty {
-  border: solid 2px lightcoral;
+.ng-invalid.ng-dirty:not(form) {
+  border: solid 2px red;
 }
